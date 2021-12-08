@@ -6,21 +6,13 @@ import Home from "./Pages/Home";
 
 function App() {
   return (
-    <div>
-      {/* <div>
-        <Link to="/FAQs">FAQs</Link>
-
-        <Link to="/Events">Events</Link>
-      </div> */}
-
-      {/* <Switch>
+    <div className="App">
+      <Switch>
+        <Route path="/" component={Home} exact/>
         <Route path="/FAQs" component={FAQ} />
-
         <Route path="/Events" component={Events} />
-      </Switch> */}
-      <Home />
+      </Switch>
 
-      <FAQ />
     </div>
   );
 }
