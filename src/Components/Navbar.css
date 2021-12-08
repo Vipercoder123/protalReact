@@ -1,0 +1,35 @@
+.bgColor {
+  background: #ffd600;
+}
+
+.brandName {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.eventsBox {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.faqBox {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.ellipse {
+  padding: 5px;
+  background: #c4c4c4;
+  border: 2px solid #040404;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
