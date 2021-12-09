@@ -31,13 +31,17 @@ const Navbar = () => {
               {/* <a class="nav-link" href="#">
                 Link
               </a> */}
-              <div className="faqBox nav-link">FAQs</div>
+              <div className="faqBox nav-link">
+                <a href="/FAQs">FAQs</a>
+              </div>
             </li>
             <li class="ml-auto nav-item">
               {/* <a class="nav-link disabled" href="#">
                 Disabled
               </a> */}
-              <div className="eventsBox nav-link">Events</div>
+              <div className="eventsBox nav-link">
+                <a href="/Events">Events</a>
+              </div>
             </li>
           </ul>
           {/* <form class="form-inline my-2 my-lg-0">

@@ -1,7 +1,20 @@
+import Dropdown from "../Components/Dropdown";
+import EventCard from "../Components/EventCard";
+import "./Events.css";
+
 const Events = () => {
   return (
     <div>
-      <h2>Events</h2>
+      <div className="dropdownDisplay">
+        <Dropdown />
+        <Dropdown />
+      </div>
+      <div className="cardDisplay">
+        <EventCard />
+        <EventCard />
+        <EventCard />
+        <EventCard />
+      </div>
     </div>
   );
 };
