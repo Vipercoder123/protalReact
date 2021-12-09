@@ -37,6 +37,10 @@ button:hover {
   background: white;
 }
 
+.headerPadding {
+  padding-bottom: 6px;
+}
+
 .card-body {
   background: #e8eeff;
 }
@@ -60,7 +64,7 @@ button:hover {
   font-size: 25px;
   border-radius: 5px;
   text-align: center;
-  top: 11px;
+  top: 13px;
   right: 15px;
   position: absolute;
   background: #e8eeff;

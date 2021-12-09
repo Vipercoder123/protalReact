@@ -8,13 +8,13 @@ const FAQCard = (props) => {
       return faqs.map((faq) => {
         return (
           <div class="card">
-            <div class="card-header" id={"heading" + faq.id}>
+            <div class="card-header headerPadding" id={"heading" + faq.id}>
               <h5 class="mb-0">
                 <button
-                  class="btn btnLink btn-link shadow-none"
+                  class="btn btnLink btn-link collapsed shadow-none"
                   data-toggle="collapse"
                   data-target={"#collapse" + faq.id}
-                  aria-expanded="false"
+                  aria-expanded="true"
                   aria-controls={"collapse" + faq.id}
                 >
                   <h3>{faq.question}</h3>
