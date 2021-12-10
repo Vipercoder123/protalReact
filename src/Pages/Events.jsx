@@ -11,7 +11,7 @@ const Events = () => {
     axios
       .get("https://karenpinto1602.github.io/frontend-hiring/events.json")
       .then((res) => {
-        console.log(events[0]);
+        //console.log(events[0]);
         setEvents(res.data);
       })
       .catch((err) => {
@@ -19,11 +19,25 @@ const Events = () => {
       });
   }, []);
 
+  const ascArray = () => {
+    const asc = [...events].sort((a, b) => a.date - b.date);
+    setEvents(asc);
+  };
+
+  const dscArray = () => {
+    const asc = [...events].sort((a, b) => a.date - b.date);
+    const dsc = asc.reverse();
+    setEvents(dsc);
+  };
+
   return (
     <div>
       <div className="dropdownDisplay">
-        <Dropdown />
-        <Dropdown />
+        {/* <Dropdown /> */}
+        {/* <Dropdown /> */}
+        <button onClick={ascArray}>Ascending</button>
+        <button onClick={dscArray}>Descending</button>
+        <button>domain</button>
       </div>
       <div className="cardDisplay">
         <EventCard events={events} />
