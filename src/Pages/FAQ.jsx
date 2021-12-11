@@ -1,4 +1,3 @@
-//import "./FAQ.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import FAQCard from "../Components/FAQCard";

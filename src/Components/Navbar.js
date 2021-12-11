@@ -1,5 +1,4 @@
 import "./Navbar.css";
-// import Ellipse from "./Ellipse";
 
 const Navbar = () => {
   return (
@@ -22,38 +21,18 @@ const Navbar = () => {
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="item active">
-              {/* <a class="nav-link" href="#">
-                Home <span class="sr-only">(current)</span>
-              </a> */}
-            </li>
+            <li class="item active"></li>
             <li class="ml-auto nav-item">
-              {/* <a class="nav-link" href="#">
-                Link
-              </a> */}
               <div className="faqBox nav-link">
                 <a href="/FAQs">FAQs</a>
               </div>
             </li>
             <li class="ml-auto nav-item">
-              {/* <a class="nav-link disabled" href="#">
-                Disabled
-              </a> */}
               <div className="eventsBox nav-link">
                 <a href="/Events">Events</a>
               </div>
             </li>
           </ul>
-          {/* <form class="form-inline my-2 my-lg-0">
-            <input
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-            />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </form> */}
         </div>
       </nav>
     </div>

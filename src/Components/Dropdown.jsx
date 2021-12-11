@@ -5,25 +5,28 @@ const Dropdown = (props) => {
   const [data, setData] = useState(props.array[0]);
 
   const domainSort = (val) => {
-    return props.domainSort(val);
+    props.domainSort(val);
   };
 
   const Ascending = () => {
     props.ascArray();
-    //console.log();
-    //setData("Ascending");
   };
 
   const Descending = () => {
     props.dscArray();
-    // setData("Descending");
   };
 
   const updateObj = (val) => {
-    eval(val + "()");
-    //domainSort(val);
+    domainSort(val);
 
     setData(val);
+  };
+
+  const selectionFunctionValue = (val) => {
+    if (props.selectFunction) {
+      eval(val + "()");
+      setData(val);
+    } else updateObj(val);
   };
 
   return (
@@ -44,7 +47,7 @@ const Dropdown = (props) => {
             <button
               value={buttonVal}
               onClick={(e) => {
-                updateObj(e.target.value);
+                selectionFunctionValue(e.target.value);
               }}
               class="dropdown-item"
               type="button"

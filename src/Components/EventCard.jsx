@@ -1,9 +1,6 @@
-import { useState } from "react";
 import "./EventCard.css";
 
 const EventCard = (props) => {
-  let domains = [];
-
   const eventData = (props) => {
     events = props.events;
 

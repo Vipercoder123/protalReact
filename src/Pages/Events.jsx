@@ -6,13 +6,11 @@ import { useState, useEffect } from "react";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
-  const [domainName, setDomainName] = useState();
 
   useEffect(() => {
     axios
       .get("https://karenpinto1602.github.io/frontend-hiring/events.json")
       .then((res) => {
-        //console.log(events[0]);
         setEvents(res.data);
       })
       .catch((err) => {
@@ -32,25 +30,19 @@ const Events = () => {
   };
 
   let domains = [];
-
   if (domains.length == 0) {
-    console.log("update");
-
-    if (events.length > 0) {
-      events.map((event) => {
-        event.domain.map((domain) => {
-          domains.indexOf(domain) === -1 ? domains.push(domain) : null;
-        });
-        console.log(domains);
+    events.map((event) => {
+      event.domain.map((domain) => {
+        domains.indexOf(domain) === -1 ? domains.push(domain) : null;
       });
-    }
+      console.log(domains);
+    });
   }
 
   let array3 = [];
 
   const domainSort = (val) => {
     if (events.length > 0) {
-      setDomainName(val);
       events.map((event) => {
         event.domain.map((domain) => {
           domain === val ? array3.push(event) : console.log(false);
@@ -68,12 +60,20 @@ const Events = () => {
   return (
     <div>
       <div className="dropdownDisplay">
-        <Dropdown ascArray={ascArray} dscArray={dscArray} array={array1} />
-        <Dropdown array={array2} domainSort={domainSort} />
+        <Dropdown
+          selectFunction={true}
+          ascArray={ascArray}
+          dscArray={dscArray}
+          array={array1}
+        />
+        <Dropdown
+          selectFunction={false}
+          array={array2}
+          domainSort={domainSort}
+        />
       </div>
       <div className="cardDisplay">
         <EventCard events={events} />
-        <button onClick={domainSort}>Sort</button>
       </div>
     </div>
   );
