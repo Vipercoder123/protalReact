@@ -1,6 +1,31 @@
 import "./Dropdown.css";
+import { useState } from "react";
 
-const Dropdown = () => {
+const Dropdown = (props) => {
+  const [data, setData] = useState(props.array[0]);
+
+  const domainSort = (val) => {
+    return props.domainSort(val);
+  };
+
+  const Ascending = () => {
+    props.ascArray();
+    //console.log();
+    //setData("Ascending");
+  };
+
+  const Descending = () => {
+    props.dscArray();
+    // setData("Descending");
+  };
+
+  const updateObj = (val) => {
+    eval(val + "()");
+    //domainSort(val);
+
+    setData(val);
+  };
+
   return (
     <div class="sortDropdown dropdown">
       <button
@@ -11,15 +36,23 @@ const Dropdown = () => {
         aria-haspopup="true"
         aria-expanded="false"
       >
-        <span className="heading">Sort by Date</span>
+        <span className="heading">{data}</span>
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <button class="dropdown-item" type="button">
-          Ascending
-        </button>
-        <button class="dropdown-item" type="button">
-          Descending
-        </button>
+        {props.array.map((buttonVal) => {
+          return (
+            <button
+              value={buttonVal}
+              onClick={(e) => {
+                updateObj(e.target.value);
+              }}
+              class="dropdown-item"
+              type="button"
+            >
+              {buttonVal}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
+  const [domainName, setDomainName] = useState();
 
   useEffect(() => {
     axios
@@ -30,17 +31,49 @@ const Events = () => {
     setEvents(dsc);
   };
 
+  let domains = [];
+
+  if (domains.length == 0) {
+    console.log("update");
+
+    if (events.length > 0) {
+      events.map((event) => {
+        event.domain.map((domain) => {
+          domains.indexOf(domain) === -1 ? domains.push(domain) : null;
+        });
+        console.log(domains);
+      });
+    }
+  }
+
+  let array3 = [];
+
+  const domainSort = (val) => {
+    if (events.length > 0) {
+      setDomainName(val);
+      events.map((event) => {
+        event.domain.map((domain) => {
+          domain === val ? array3.push(event) : console.log(false);
+        });
+      });
+    }
+    console.log(array3);
+
+    setEvents(array3);
+  };
+
+  let array1 = ["Sort By Date", "Ascending", "Descending"];
+  let array2 = ["Sort By Category", ...domains];
+
   return (
     <div>
       <div className="dropdownDisplay">
-        {/* <Dropdown /> */}
-        {/* <Dropdown /> */}
-        <button onClick={ascArray}>Ascending</button>
-        <button onClick={dscArray}>Descending</button>
-        <button>domain</button>
+        <Dropdown ascArray={ascArray} dscArray={dscArray} array={array1} />
+        <Dropdown array={array2} domainSort={domainSort} />
       </div>
       <div className="cardDisplay">
         <EventCard events={events} />
+        <button onClick={domainSort}>Sort</button>
       </div>
     </div>
   );
